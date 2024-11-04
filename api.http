@@ -1,0 +1,47 @@
+### recuperar todas las peliculas
+http://localhost:1234/movies
+
+### recuperar peliculas por ID (fake)
+http://localhost:1234/movies/1
+
+### recuperar peliculas por ID (correcto)
+http://localhost:1234/movies/9e6106f0-848b-4810-a11a-3d832a5610f9
+
+### recuperar todas las por genero
+http://localhost:1234/movies?genre=Action
+
+### crear una pelicula
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "Dragon Ball Z: la batalla de los dioses",
+  "year": 2013,
+  "director": "Masahiro Hosoda",
+  "duration": 105,
+  "poster": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2013/10/253307-critica-dragon-ball-z-battle-gods.jpg",
+  "genre": ["Action", "Anime"],
+  "rate": 8
+}
+
+### crear una pelicula (only required params)
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "Dragon Ball Z: la batalla de los dioses",
+  "year": 2013,
+  "director": "Masahiro Hosoda"
+}
+
+### actualizar datos de una peli 
+PATCH http://localhost:1234/movies/04986507-b3ed-442c-8ae7-4c5df804f896
+Content-Type: application/json
+
+{
+  "year" : 2030,
+  "title" : "dsadasdasdasdas loco"
+}
+
+### eliminar pelicula por ID (correcto)
+GET http://localhost:1234/movies/ccf36f2e-8566-47f7-912d-9f4647250bc7
